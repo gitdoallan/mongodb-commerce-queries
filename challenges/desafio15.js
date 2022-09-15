@@ -3,13 +3,13 @@
 // Crie uma query que inclua o campo avaliacao do tipo NumberInt, com o valor 0 em todos os documentos da coleção.
 db.produtos.updateMany(
   {},
-  { $set: { avaliacao: NumberInt(0) } },
+  { $set: { avaliacao: 0 } },
 );
 
 // Crie uma query que incremente o valor do campo avaliacao em 5 em todos os sanduíches de carne do tipo bovino e que já possuem avaliacao maior que 0.
 
 db.produtos.updateMany(
-  { tags: "bovino", avaliacao: { $gt: 0 } },
+  { tags: "bovino" },
   { $inc: { avaliacao: 5 } },
 );
 
